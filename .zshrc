@@ -108,3 +108,9 @@ function cless() {
 
 # Aliases
 alias ccat='pygmentize -g -O style=monokai -f console256 -g'
+
+# Start tmux
+if [ -z $TMUX ];
+then;
+  tmux;
+fi
