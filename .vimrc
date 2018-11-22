@@ -23,6 +23,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'w0rp/ale'
 Plugin 'Yggdroot/indentLine'
 Plugin 'chriskempson/base16-vim'
+Plugin 'ErichDonGubler/vim-sublime-monokai'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
