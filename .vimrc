@@ -24,6 +24,7 @@ Plugin 'w0rp/ale'
 Plugin 'Yggdroot/indentLine'
 Plugin 'chriskempson/base16-vim'
 Plugin 'ErichDonGubler/vim-sublime-monokai'
+Plugin 'sjl/badwolf'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -37,7 +38,8 @@ let g:airline_theme='simple'
 
 set laststatus=2
 syntax on
-colorscheme sublimemonokai
+" colorscheme sublimemonokai
+colorscheme badwolf
 
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
