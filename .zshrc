@@ -64,7 +64,9 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  zsh-completions
 )
+autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 
@@ -95,18 +97,14 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-
-export TERM=xterm-256color
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-export PATH=$PATH:$HOME/.gem/ruby/2.5.0/bin
 
 # Less highlight
 function cless() {
   pygmentize -g -O style=monokai -f console256 -g $1 | less -R
 }
 
-# Aliases
+# cat highlight
 alias ccat='pygmentize -g -O style=monokai -f console256 -g'
 
 # Start tmux
@@ -120,3 +118,11 @@ BASE16_SHELL="$HOME/.config/base16-shell"
 [ -n "$PS1" ] && \
 	[ -s "BASE16_SHELL/profile_helper.sh" ] && \
 		eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+# Syntax highlighting
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Auto suggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+. /usr/share/autojump/autojump.sh
