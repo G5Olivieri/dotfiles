@@ -1,0 +1,9 @@
+packages:
+  - curl
+  - docker
+  - git
+  - python-pygments
+  - tmux
+  - tree
+  - vim
+  - zsh

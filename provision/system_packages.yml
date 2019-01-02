@@ -1,0 +1,10 @@
+- name: upgrade all packages
+  yum:
+    name: '*'
+    state: latest
+  register: updated_packages
+
+- name: install packages
+  yum:
+    name: "{{ packages }}"
+  register: installed_packages

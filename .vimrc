@@ -72,7 +72,8 @@ augroup END
 " }}}
 
 " no expand tab
-set noexpandtab
+set tabstop=2
+set shiftwidth=2
 
 " turn relative line numbers on
 set number

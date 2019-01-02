@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+    - include_tasks: system_packages.yml 
+    - include_tasks: user_configurations.yml 
+
+  vars_files:
+    - variables.yml
