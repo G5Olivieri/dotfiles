@@ -120,9 +120,11 @@ BASE16_SHELL="$HOME/.config/base16-shell"
 		eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # Syntax highlighting
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Auto suggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 . /usr/share/autojump/autojump.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
