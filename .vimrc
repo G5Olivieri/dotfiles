@@ -5,6 +5,8 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'Quramy/tsuquyomi'
+Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'ErichDonGubler/vim-sublime-monokai'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'VundleVim/Vundle.vim'
@@ -94,3 +96,10 @@ map <F7> mzgg=G`z
 
 " ctrl p exclude files
 set wildignore+=*/vendor/*,*/.git/*
+
+" Typescript {{{
+if !exists("g:ycm_semantic_triggers")
+	let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
+" }}}
