@@ -7,7 +7,6 @@ call vundle#begin()
 
 Plugin 'Quramy/tsuquyomi'
 Plugin 'HerringtonDarkholme/yats.vim'
-Plugin 'ErichDonGubler/vim-sublime-monokai'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Yggdroot/indentLine'
@@ -19,7 +18,6 @@ Plugin 'raimondi/delimitmate'
 Plugin 'scrooloose/nerdtree'
 Plugin 'sjl/badwolf'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tomasiser/vim-code-dark'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
@@ -73,9 +71,10 @@ augroup git " {{{
 augroup END
 " }}}
 
-" no expand tab
+" set tab configuration
 set tabstop=2
 set shiftwidth=2
+set expandtab
 
 " turn relative line numbers on
 set number
@@ -95,11 +94,15 @@ set colorcolumn=120
 map <F7> mzgg=G`z
 
 " ctrl p exclude files
-set wildignore+=*/vendor/*,*/.git/*
+set wildignore+=*/vendor/*,*/.git/*,*/node_modules/*
 
 " Typescript {{{
 if !exists("g:ycm_semantic_triggers")
 	let g:ycm_semantic_triggers = {}
 endif
 let g:ycm_semantic_triggers['typescript'] = ['.']
+" }}}
+
+" JSON {{{
+au BufRead,BufNewFile *.json set syntax=javascript
 " }}}
