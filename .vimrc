@@ -5,11 +5,12 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'Quramy/tsuquyomi'
 Plugin 'HerringtonDarkholme/yats.vim'
+Plugin 'Quramy/tsuquyomi'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Yggdroot/indentLine'
+Plugin 'andreshazard/vim-freemarker'
 Plugin 'chriskempson/base16-vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'kien/ctrlp.vim'
@@ -106,3 +107,6 @@ let g:ycm_semantic_triggers['typescript'] = ['.']
 " JSON {{{
 au BufRead,BufNewFile *.json set syntax=javascript
 " }}}
+
+" Set mouse mode to true
+set mouse=a
