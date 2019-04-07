@@ -65,6 +65,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   zsh-completions
+  zsh-autosuggestions
 )
 autoload -U compinit && compinit
 
@@ -121,9 +122,6 @@ BASE16_SHELL="$HOME/.config/base16-shell"
 
 # Syntax highlighting
 [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Auto suggestions
-[ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 . /usr/share/autojump/autojump.sh
 
