@@ -66,6 +66,7 @@ plugins=(
   git
   zsh-completions
   zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 autoload -U compinit && compinit
 
@@ -120,9 +121,9 @@ BASE16_SHELL="$HOME/.config/base16-shell"
 	[ -s "BASE16_SHELL/profile_helper.sh" ] && \
 		eval "$("$BASE16_SHELL/profile_helper.sh")"
 
-# Syntax highlighting
-[ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Install autojump
+[[ -s /home/glayson/.autojump/etc/profile.d/autojump.sh ]] && source /home/glayson/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
 
-. /usr/share/autojump/autojump.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
