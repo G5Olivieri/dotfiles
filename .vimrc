@@ -87,6 +87,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 " PHPCS ruleset file
 let g:ale_php_phpcs_standard = './phpcs.xml'
 
+" Fix bug invible cursor on lint error
+let g:ale_echo_cursor = 0
+
 " column limit line
 highlight ColorColumn ctermbg=505050
 set colorcolumn=120
@@ -110,3 +113,4 @@ au BufRead,BufNewFile *.json set syntax=javascript
 
 " Set mouse mode to true
 set mouse=a
+
