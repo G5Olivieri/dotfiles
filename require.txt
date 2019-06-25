@@ -8,6 +8,7 @@ docker-compose
 dotnet-sdk-2.2
 fzf
 git
+jq
 oh-my-zsh
 openssl
 pip3
@@ -24,3 +25,5 @@ zsh
 zsh-autosuggestions
 zsh-completions
 zsh-syntax-highlighting
+openjdk-11-jdk
+openjdk-11-source
