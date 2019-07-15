@@ -27,6 +27,7 @@ Plugin 'valloric/youcompleteme'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'w0rp/ale'
+Plugin 'hashivim/vim-terraform'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -56,6 +57,15 @@ inoremap <C-a> <Home>
 inoremap <C-e> <End>
 inoremap <C-b> <C-Left>
 inoremap <C-f> <C-Right>
+
+" ycm python
+let g:ycm_python_interpreter_path = ''
+let g:ycm_python_sys_path = []
+let g:ycm_extra_conf_vim_data = [
+  \  'g:ycm_python_interpreter_path',
+  \  'g:ycm_python_sys_path'
+  \]
+let g:ycm_global_ycm_extra_conf = '~/global_extra_conf.py'
 
 " global .editorconfig path
 let g:EditorConfig_exec_path='~/'
@@ -114,3 +124,5 @@ au BufRead,BufNewFile *.json set syntax=javascript
 " Set mouse mode to true
 set mouse=a
 
+" terraform
+let g:terraform_fmt_on_save = 1
