@@ -1,0 +1,48 @@
+let mapleader = ','
+Save current file
+nnoremap <leader>s :w<CR>
+inoremap <leader>s <Esc>:w<CR>
+
+" Exit insert mode
+inoremap jk <Esc>
+
+" Apply macros with Q
+nnoremap Q @q
+vnoremap Q :norm @q<cr>
+nnoremap <leader><leader> :Commands<CR>
+
+nnoremap <buffer> <M-Enter> O<Esc>jo<Esc>ki
+
+" Quit current file
+nnoremap <leader>q :q<CR>
+
+" Indent current paragraph
+nnoremap <leader>a =ip
+
+" Get current direcory in command mode
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" Save as sudo
+cnoremap w!! w !sudo tee > /dev/null %
+
+"Remap arrow keys to easily resize windows
+nnoremap <silent> <Right> :vertical res +3<CR>
+nnoremap <silent> <Left> :vertical res -3<CR>
+nnoremap <silent> <Up> :res +3<CR>
+nnoremap <silent> <Down> :res -3<CR>
+
+" Toggle current folding
+nnoremap <Space> za
+
+" Mappings to IDEA Actions
+set surround
+set multiple-cursors
+
+nnoremap C-] :action GoToSymbol<CR>
+nnoremap gcc :action CommentByLineComment<CR>
+vnoremap gc :action CommentByLineComment<CR>
+nnoremap == :action ReformatCode<CR>
+nnoremap / :action Find<CR>
+nnoremap <leader>n :action GoToClass<CR>
+nnoremap <leader>t :action GotoFile<CR>
+vnoremap / :action Find<CR>
