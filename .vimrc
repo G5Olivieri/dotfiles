@@ -1,37 +1,40 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+if empty(glob($HOME . '/.vim/autoload/plug.vim'))
+  !curl -fLo "$HOME/.vim/autoload/plug.vim" --create-dirs
+  	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+function! BuildYCM(info)
+  if a:info.status == 'installed' || a:info.force
+    !./install.py
+  endif
+endfunction
 
-Plugin 'HerringtonDarkholme/yats.vim'
-Plugin 'Quramy/tsuquyomi'
-Plugin 'StanAngeloff/php.vim'
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Yggdroot/indentLine'
-Plugin 'andreshazard/vim-freemarker'
-Plugin 'chriskempson/base16-vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'raimondi/delimitmate'
-Plugin 'scrooloose/nerdtree'
-Plugin 'sjl/badwolf'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-surround'
-Plugin 'valloric/youcompleteme'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'w0rp/ale'
-Plugin 'hashivim/vim-terraform'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+Plug '~/.fzf'
+Plug 'Yggdroot/indentLine'
+Plug 'chriskempson/base16-vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'hashivim/vim-terraform'
+Plug 'mattn/emmet-vim'
+Plug 'raimondi/delimitmate'
+Plug 'rking/ag.vim'
+Plug 'sjl/badwolf'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-surround'
+Plug 'valloric/youcompleteme', { 'do': function('BuildYCM') }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'w0rp/ale'
+
+" Initialize plugin system
+call plug#end()
 
 " set color 256
 if !has('gui_running')

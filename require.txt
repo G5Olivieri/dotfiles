@@ -9,7 +9,6 @@ dotnet-sdk-2.2
 fzf
 git
 jq
-oh-my-zsh
 openssl
 pip3
 pygmentize
@@ -19,7 +18,7 @@ python3
 python3-dev
 tig
 vim-gtk3
-Vundle
+Plug.vim
 xclip
 zsh
 zsh-autosuggestions
