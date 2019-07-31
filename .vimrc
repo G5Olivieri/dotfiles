@@ -9,13 +9,12 @@ function! BuildYCM(info)
   endif
 endfunction
 
-
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-Plug '~/.fzf'
+Plug '~/fzf'
 Plug 'Yggdroot/indentLine'
 Plug 'chriskempson/base16-vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -110,6 +109,9 @@ set colorcolumn=120
 " autoindent
 map <F7> mzgg=G`z
 
+" Bind ctrl p to fzf
+map <C-p> :FZF<CR>
+
 " ctrl p exclude files
 set wildignore+=*/vendor/*,*/.git/*,*/node_modules/*
 
@@ -129,3 +131,9 @@ set mouse=a
 
 " terraform
 let g:terraform_fmt_on_save = 1
+
+" wildmenu
+set wildmenu
+
+" bind ctrl e to Explore
+map <C-e> :Explore<CR>

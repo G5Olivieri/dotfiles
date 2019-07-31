@@ -44,6 +44,7 @@ BASE16_SHELL="$HOME/.config/base16-shell"
 # sources
 source "$HOME/Data/dotfiles/zsh/completion.zsh"
 source "$HOME/Data/dotfiles/zsh/git.zsh"
+source "$HOME/Data/dotfiles/zsh/aliases.zsh"
 
 # Fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

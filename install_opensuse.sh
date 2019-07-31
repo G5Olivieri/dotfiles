@@ -49,3 +49,5 @@ sudo usermod -aG docker $USER
 create_link_if_not_exists "$HOME/Data/dotfiles/.vimrc" "$HOME/.vimrc"
 create_link_if_not_exists "$HOME/Data/dotfiles/.zshrc" "$HOME/.zshrc"
 create_link_if_not_exists "$HOME/Data/dotfiles/.tmux.conf" "$HOME/.tmux.conf"
+create_link_if_not_exists "$HOME/Data/dotfiles/.ideavimrc" "$HOME/.ideavimrc"
+
