@@ -137,3 +137,6 @@ set wildmenu
 
 " bind ctrl e to Explore
 map <C-e> :Explore<CR>
+
+" Disabling swap file
+set noswapfile

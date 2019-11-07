@@ -58,3 +58,5 @@ function cless() {
 alias ccat='pygmentize -g -O style=monokai -f console256 -g'
 
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
+
+export PATH="$PATH:$HOME/.local/bin"

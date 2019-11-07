@@ -20,6 +20,7 @@ sudo apt-get install -y \
 	curl \
 	curl \
 	git \
+  gnome-tweaks \
 	gnupg-agent \
 	jq \
   python \
@@ -42,12 +43,12 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
 sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
+   bionic \
    stable edge"
 
 sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
+   bionic \
    stable edge test"
 sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io
@@ -76,3 +77,12 @@ create_link_if_not_exists "$HOME/Data/dotfiles/.zshrc" "$HOME/.zshrc"
 create_link_if_not_exists "$HOME/Data/dotfiles/.tmux.conf" "$HOME/.tmux.conf"
 create_link_if_not_exists "$HOME/Data/dotfiles/.ideavimrc" "$HOME/.ideavimrc"
 
+# ssh key
+cp -r $HOME/Data/.ssh $HOME/
+eval "$(ssh-agent -s)"
+echo "User password"
+ssh-add $HOME/.ssh/id_rsa
+
+# Git config
+git config --global user.name "Glayson Olivieri"
+git config --global user.email "glayson@vizir.com.br"
