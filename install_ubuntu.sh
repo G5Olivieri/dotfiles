@@ -23,10 +23,13 @@ sudo apt-get install -y \
   gnome-tweaks \
 	gnupg-agent \
 	jq \
+  openjdk-11-jdk \
+  openjdk-11-source \
   python \
 	python3 \
 	python3-dev \
 	python3-pip \
+  qemu-kvm \
 	silversearcher-ag \
 	software-properties-common \
 	tig \
@@ -86,3 +89,6 @@ ssh-add $HOME/.ssh/id_rsa
 # Git config
 git config --global user.name "Glayson Olivieri"
 git config --global user.email "glayson@vizir.com.br"
+
+# Add user in KVM group
+sudo usermod -aG kvm $USER
