@@ -1,13 +1,8 @@
 if empty(glob($HOME . '/.vim/autoload/plug.vim'))
   !curl -fLo "$HOME/.vim/autoload/plug.vim" --create-dirs
   	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source "$HOME/.vimrc"
 endif
-
-function! BuildYCM(info)
-  if a:info.status == 'installed' || a:info.force
-    !./install.py
-  endif
-endfunction
 
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
@@ -25,12 +20,13 @@ Plug 'rking/ag.vim'
 Plug 'sjl/badwolf'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
-Plug 'valloric/youcompleteme', { 'do': function('BuildYCM') }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'shawncplus/phpcomplete.vim'
+Plug 'preservim/nerdtree'
 
 " Initialize plugin system
 call plug#end()
@@ -68,9 +64,6 @@ let g:ycm_extra_conf_vim_data = [
   \  'g:ycm_python_sys_path'
   \]
 let g:ycm_global_ycm_extra_conf = '~/global_extra_conf.py'
-
-" global .editorconfig path
-let g:EditorConfig_exec_path='~/'
 
 " git config to commit
 augroup git " {{{

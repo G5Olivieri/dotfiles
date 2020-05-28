@@ -46,3 +46,5 @@ nnoremap / :action Find<CR>
 nnoremap <leader>n :action GoToClass<CR>
 nnoremap <leader>t :action GotoFile<CR>
 vnoremap / :action Find<CR>
+
+set ideajoin
