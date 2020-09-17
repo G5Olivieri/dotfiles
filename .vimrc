@@ -10,7 +10,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug '~/fzf'
-Plug 'Yggdroot/indentLine'
 Plug 'chriskempson/base16-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'hashivim/vim-terraform'
@@ -21,12 +20,9 @@ Plug 'sjl/badwolf'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
-Plug 'ycm-core/YouCompleteMe'
-Plug 'shawncplus/phpcomplete.vim'
 Plug 'preservim/nerdtree'
+Plug 'ycm-core/YouCompleteMe'
 
 " Initialize plugin system
 call plug#end()
@@ -36,25 +32,12 @@ if !has('gui_running')
 	set t_Co=256
 endif
 
-" airline theme
-let g:airline_theme='simple'
-
 set laststatus=2
 syntax on
 
 " set color
 " colorscheme sublimemonokai
 colorscheme badwolf
-
-" navigate in insert mode
-inoremap <C-h> <Left>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-l> <Right>
-inoremap <C-a> <Home>
-inoremap <C-e> <End>
-inoremap <C-b> <C-Left>
-inoremap <C-f> <C-Right>
 
 " ycm python
 let g:ycm_python_interpreter_path = ''
@@ -87,10 +70,7 @@ set number
 set relativenumber
 
 " trim on save
-autocmd BufWritePre * :%s/\s\+$//e
-
-" PHPCS ruleset file
-let g:ale_php_phpcs_standard = './phpcs.xml'
+" autocmd BufWritePre * :%s/\s\+$//e
 
 " Fix bug invible cursor on lint error
 let g:ale_echo_cursor = 0
@@ -133,3 +113,11 @@ map <C-e> :Explore<CR>
 
 " Disabling swap file
 set noswapfile
+
+let g:ale_fixers = {
+  \   'javascript': [ 'eslint', 'prettier', 'trim_whitespace' ],
+  \}
+
+let g:mapleader = ','
+nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>s :w<CR>
