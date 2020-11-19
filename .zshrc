@@ -4,8 +4,8 @@ fpath=( "$DOTFILES/zsh/zfunctions" $fpath )
 eval $(dircolors $DOTFILES/dircolors)
 
 # Start tmux
-if [ -z $TMUX ]; then
-  tmux;
+if [[ -z "$TMUX" ]]; then
+  tmux attach-session -t $USER || tmux new-session -s $USER
 fi
 
 bindkey -e
