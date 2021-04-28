@@ -1,0 +1,6 @@
+[
+    { "key": "ctrl+e", "command": "workbench.files.action.focusFilesExplorer", "when": "editorFocus"},
+    { "key": "ctrl+e", "command": "workbench.action.focusActiveEditorGroup", "when": "!editorFocus" },
+    { "key": "ctrl+n", "command": "explorer.newFile", "when": "explorerViewletFocus" },
+    { "key": "ctrl+shift+n", "command": "explorer.newFolder", "when": "!editorFocus" }
+]
