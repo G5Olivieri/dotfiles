@@ -26,7 +26,6 @@ sudo apt-get install -y \
 	xclip \
 	zsh
 
-
 # Install docker and docker-compose
 sudo apt-get remove docker docker.io containerd runc
 sudo apt autoremove
@@ -45,28 +44,16 @@ sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 sudo usermod -aG docker $USER
 
-# Install zsh
-chsh -s /bin/zsh
-
-# Install fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/fzf
-~/fzf/install \
-  --key-bindings \
-  --xdg \
-  --completion \
-  --no-update-rc \
-  --no-bash \
-  --no-fish
+# Install asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 
 # Pip install
-sudo python3 -m pip install pygments docker-compose
-
-# ssh key
-cp -r $HOME/Data/.ssh $HOME/
-eval "$(ssh-agent -s)"
-echo "User password"
-ssh-add $HOME/.ssh/id_rsa
+sudo python3 -m pip install docker-compose
 
 # Git config
 git config --global user.name "Glayson Olivieri"
 git config --global user.email "glayson@vizir.com.br"
+
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+

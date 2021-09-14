@@ -2,6 +2,10 @@
 
 set -xeuo pipefail
 
+config_path=$(dirname $(dirname $(readlink -f $0)))
+
+echo $current_path
+
 create_link_if_not_exists () {
   if [ ! -L "$2" ]; then
     echo "Link $1 -> $2"
@@ -10,7 +14,6 @@ create_link_if_not_exists () {
 }
 
 # Create links
-create_link_if_not_exists "$HOME/Data/dotfiles/.vimrc" "$HOME/.vimrc"
-create_link_if_not_exists "$HOME/Data/dotfiles/.zshrc" "$HOME/.zshrc"
-create_link_if_not_exists "$HOME/Data/dotfiles/.tmux.conf" "$HOME/.tmux.conf"
-create_link_if_not_exists "$HOME/Data/dotfiles/.ideavimrc" "$HOME/.ideavimrc"
+create_link_if_not_exists "$config_path/.vimrc" "$HOME/.vimrc"
+create_link_if_not_exists "$config_path/.zshrc" "$HOME/.zshrc"
+create_link_if_not_exists "$config_path/.tmux.conf" "$HOME/.tmux.conf"
