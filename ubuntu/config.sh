@@ -4,8 +4,6 @@ set -xeuo pipefail
 
 config_path=$(dirname $(dirname $(readlink -f $0)))
 
-echo $current_path
-
 create_link_if_not_exists () {
   if [ ! -L "$2" ]; then
     echo "Link $1 -> $2"
