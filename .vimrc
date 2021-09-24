@@ -101,6 +101,8 @@ nnoremap <leader>ch :let @+=expand("%:p:h")<CR>
 " tsconfig.json is actually jsonc, help TypeScript set the correct filetype
 autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 
+autocmd BufRead,BufNewFile Dockerfile* set filetype=dockerfile
+
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)

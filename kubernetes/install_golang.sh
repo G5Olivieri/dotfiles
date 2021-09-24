@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-curl -LO "https://golang.org/dl/go1.17.1.linux-amd64.tar.gz"
+asdf plugin-add golang https://github.com/kennyp/asdf-golang
 
-sudo tar -C /usr/local -xzf go1.17.1.linux-amd64.tar.gz
-rm go1.17.1.linux-amd64.tar.gz
+asdf install golang 1.16
+asdf global golang 1.16

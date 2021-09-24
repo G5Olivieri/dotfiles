@@ -52,7 +52,7 @@ sudo python3 -m pip install docker-compose
 
 # Git config
 git config --global user.name "Glayson Olivieri"
-git config --global user.email "glayson@vizir.com.br"
+git config --global user.email "glayson.murollo75@gmail.com"
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
