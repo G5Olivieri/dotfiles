@@ -22,7 +22,7 @@ sudo apt-get install -y \
 	tig \
 	tmux \
 	unzip \
-	vim-gtk3 \
+	neovim \
 	xclip \
 	zsh
 
@@ -41,14 +41,11 @@ sudo add-apt-repository \
    $(lsb_release -cs) \
    stable edge test"
 sudo apt-get update
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo usermod -aG docker $USER
 
 # Install asdf
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
-
-# Pip install
-sudo python3 -m pip install docker-compose
 
 # Git config
 git config --global user.name "Glayson Olivieri"

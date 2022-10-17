@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
-set -xeuo pipefail
+set -euo pipefail
 
-config_path=$(dirname $(dirname $(readlink -f $0)))
+config_path=${1:-""}
+
+if [ -z $config_path ]; then
+  echo "usage: ${0} <path_to_dotfiles>" 
+  exit 1
+fi
 
 create_link_if_not_exists () {
   if [ ! -L "$2" ]; then
@@ -12,6 +17,4 @@ create_link_if_not_exists () {
 }
 
 # Create links
-create_link_if_not_exists "$config_path/.vimrc" "$HOME/.vimrc"
-create_link_if_not_exists "$config_path/.zshrc" "$HOME/.zshrc"
 create_link_if_not_exists "$config_path/.tmux.conf" "$HOME/.tmux.conf"
