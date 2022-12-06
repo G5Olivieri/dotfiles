@@ -1,15 +1,15 @@
 up:
-	docker-compose up -d
+	docker compose up -d
 
 down:
-	docker-compose kill
-	docker-compose rm -f
+	docker compose kill
+	docker compose rm -f
 
 logs:
-	docker-compose logs -f
+	docker compose logs -f
 
 shell:
-	docker-compose run --rm app sh
+	docker compose run --rm app sh
 
-build:
-	docker-compose build
+docker-compose.build:
+	docker compose build --no-cache
