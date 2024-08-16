@@ -30,7 +30,7 @@ require('packer').startup(function(use)
 	use 'preservim/nerdcommenter'
 	use 'mattn/emmet-vim'
 	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.0',
+		'nvim-telescope/telescope.nvim', tag = '0.1.5',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
@@ -108,8 +108,8 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require("lspconfig")
 
 -- Python
-lspconfig["pyright"].setup{
-	capabilities = capabilities
+lspconfig["ruff_lsp"].setup {
+	capabilities = capabilities,
 }
 -- Typescript/TSX
 lspconfig["tsserver"].setup{
@@ -120,7 +120,7 @@ lspconfig["bashls"].setup{
 	capabilities = capabilities
 }
 -- Lua
-lspconfig["sumneko_lua"].setup{
+lspconfig["lua_ls"].setup{
 	capabilities = capabilities
 }
 -- GOlang
@@ -148,8 +148,8 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
-vim.g.ale_fixers = {go = {'gofmt', 'goimports'}, python = {'black'}, typescriptreact = {'prettier'}}
-vim.g.ale_linters = {go = {'gopls', 'golint'}, javascript = {'eslint'}, python = {'flake8'}}
+vim.g.ale_fixers = {go = {'gofmt', 'goimports'}, python = {'ruff', 'ruff_format'}, typescriptreact = {'prettier'}}
+vim.g.ale_linters = {go = {'gopls', 'golint'}, javascript = {'eslint'}, python = {'ruff', 'pylint', 'flake8'}}
 vim.g.ale_fix_on_save = 1
 
 vim.api.nvim_command('set number')
